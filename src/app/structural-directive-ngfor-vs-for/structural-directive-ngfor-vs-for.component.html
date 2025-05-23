@@ -1,0 +1,175 @@
+<div class="row text-center">
+
+    <div class="col-12 m-3">
+
+        <h3> Example of *ngFor and For</h3>
+    </div>
+
+</div>
+
+
+<div class="row text-center">
+    <div class="col-4">
+
+        <select name="" id="" class="p-2">
+
+            <!-- <option [value]="emp.empNumber" 
+            *ngFor="let emp of employees">
+
+            {{emp.empName}} - {{emp.empEmail}}
+
+            </option> -->
+
+        @for (emp of employees; track emp;) {
+            <option>
+                {{emp.empName}} - {{emp.empEmail}}
+            </option>
+        }
+
+
+        </select>
+
+    
+
+    </div>
+
+
+    <div class="col-6">
+
+        <table class="table  table-bordered">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+            </thead>
+
+            <tbody> 
+
+            <!-- <tr *ngFor="let emp of employees">
+
+                <td> {{emp.empNumber}}</td>
+                <td> {{emp.empName}}</td>
+                <td> {{emp.empEmail}}</td>
+                <td> {{emp.empDept}}</td>
+            </tr>    -->
+
+
+            @for (emp of employees; track emp;) {
+                <tr>
+                <td> {{emp.empNumber}}</td>
+                <td> {{emp.empName}}</td>
+                <td> {{emp.empEmail}}</td>
+                <td> {{emp.empDept}}</td>
+                    
+                </tr>
+            }
+
+            </tbody>
+
+
+        </table>
+
+
+
+    </div>
+
+    <div class="col-2">
+
+        <ul>
+            
+    
+<!-- 
+             <li *ngFor="let comp of companyList">
+
+                {{comp}}
+
+             </li> -->
+
+             @for (company of companyList; track company) {
+
+                <li>
+
+                    {{company}}
+
+                </li>
+
+             }
+
+
+        </ul>
+
+
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+<hr>
+
+<div class="row text-center">
+
+    <div class="col-4">
+
+        <!-- <div *ngFor="let com of companyList">
+
+            {{com}}
+
+        </div> -->
+
+        @for (comp of companyList; track comp) {
+            <div>{{comp}}</div>
+        }
+
+    </div>
+
+    <div class="col-8">
+        <!-- <button class="btn btn-primary m-1"
+         *ngFor="let comp of companyList">
+
+            {{comp}}
+
+        </button> -->
+
+        @for (comp of companyList; track comp; 
+              let f=$first,
+              let last=$last;) 
+
+     {@if(f == true) {
+
+            <button style="color: red;"
+             class="btn btn-primary m-1">
+                {{comp}}
+            </button>
+        }
+        @else {
+            <button  class="btn btn-primary m-1">
+                {{comp}}
+            </button>
+        }
+        
+    }
+    
+
+    </div>
+
+    <div class="col-4">
+
+    </div>
+
+</div>
+
+<hr>
+
+<div>
+    <ul>
+        <li> Mandatory tracking function</li>
+        <li> No explicit imports needed</li>
+    </ul>
+</div>
