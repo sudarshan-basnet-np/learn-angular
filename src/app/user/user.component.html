@@ -1,1 +1,29 @@
-<p>user works!</p>
+<div class="container d-flex justify-content-center mt-5" style="height: 100%;">
+    <div class="w-50 p-5 border border-cecondary text-center">
+
+        <h2> Welcome to login</h2> <br>
+
+        <label for=""> Username :</label> 
+        <input type="text"  [(ngModel)]="inputName" placeholder="Enter your first name"> 
+        <br>
+        <br>
+
+        <label for=""> Password :</label>
+        <input type="password" [(ngModel)]="inputPassword" placeholder="Enter you password">
+
+        <br>
+        <br>
+
+        <!-- <button class="btn btn-primary" routerLink="/data-binding">
+            Login
+        </button> -->
+
+        <button class="btn btn-primary"  (click)="loginData()">
+            Login
+        </button>
+
+
+
+    </div>
+
+</div>
