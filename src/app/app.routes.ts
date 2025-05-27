@@ -4,6 +4,7 @@ import { AppDataBindingComponent } from './app-data-binding/app-data-binding.com
 import { StructuralDirectiveNgSwitchVsSwitchComponent } from './structural-directive-ng-switch-vs-switch/structural-directive-ng-switch-vs-switch.component';
 import { AttributesDirectivesComponent } from './attributes-directives/attributes-directives.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component';
 
 export const routes: Routes = [
 
@@ -41,6 +42,12 @@ export const routes: Routes = [
         path: 'attribute-directive',
         component: AttributesDirectivesComponent
     }, 
+
+    {
+        path: 'built-in-pipes',
+        component: BuiltInPipesComponent
+
+    },
 
 
     //wild card routes
