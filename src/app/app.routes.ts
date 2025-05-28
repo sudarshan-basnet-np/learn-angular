@@ -5,6 +5,7 @@ import { StructuralDirectiveNgSwitchVsSwitchComponent } from './structural-direc
 import { AttributesDirectivesComponent } from './attributes-directives/attributes-directives.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 export const routes: Routes = [
 
@@ -47,6 +48,11 @@ export const routes: Routes = [
         path: 'built-in-pipes',
         component: BuiltInPipesComponent
 
+    },
+
+    {
+        path: 'tdf',
+        component: TemplateDrivenFormComponent
     },
 
 
