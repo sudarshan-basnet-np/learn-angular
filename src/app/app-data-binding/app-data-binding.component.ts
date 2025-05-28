@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SharingDataService } from '../sharing-data.service';
 
 @Component({
   selector: 'app-app-data-binding',
@@ -34,4 +35,16 @@ export class AppDataBindingComponent {
   onChange() {
     alert("Country has changes successfully")
   }
+
+  
+  dummyData: any;
+
+  constructor(private _sharedData : SharingDataService) {
+    this.dummyData = this._sharedData.userObect;
+
+  }
+
+
+
+
 }
