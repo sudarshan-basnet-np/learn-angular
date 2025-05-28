@@ -6,6 +6,7 @@ import { AttributesDirectivesComponent } from './attributes-directives/attribute
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 export const routes: Routes = [
 
@@ -53,6 +54,11 @@ export const routes: Routes = [
     {
         path: 'tdf',
         component: TemplateDrivenFormComponent
+    },
+    
+    {
+        path: 'recative-forms',
+        component: ReactiveFormsComponent
     },
 
 
