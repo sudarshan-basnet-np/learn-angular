@@ -1,0 +1,23 @@
+<div class="m-3">
+
+    @if (isEligiableForSubscription) {
+        <div class="text-success">
+            You are eligiable 
+        </div>
+    }@else {
+        <div class="text-danger">
+            You are not eligiable
+        </div>
+    }
+
+    <ul>
+
+        <li> {{dummyData.id}} </li>
+        <li> {{dummyData.name}} </li>
+        <li> {{dummyData.userName}} </li>
+        <li> {{dummyData.email}} </li>
+
+
+    </ul>
+
+</div>

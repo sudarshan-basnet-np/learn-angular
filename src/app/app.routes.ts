@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
 
@@ -28,6 +29,11 @@ export const routes: Routes = [
     {
         path:  'user',
         component: UserComponent
+    },
+
+    {
+        path: 'profile',
+        component: ProfileComponent
     },
 
     {
