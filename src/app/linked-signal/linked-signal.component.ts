@@ -4,11 +4,9 @@ import { Component, computed, linkedSignal, signal } from '@angular/core';
   selector: 'app-linked-signal',
   imports: [],
   templateUrl: './linked-signal.component.html',
-  styleUrl: './linked-signal.component.scss'
+  styleUrl: './linked-signal.component.scss',
 })
 export class LinkedSignalComponent {
-
-
   qualitySignal = signal(1);
 
   price = 10;
@@ -19,7 +17,6 @@ export class LinkedSignalComponent {
   //   return this.qualitySignal() * this.price;
   // })
 
-
   // total = linkedSignal(  () => {
   //   return this.qualitySignal() * this.price;
   // }
@@ -27,17 +24,13 @@ export class LinkedSignalComponent {
   // )
 
   // linked singal wiht source and computation -> developer preview
-  total = linkedSignal ( {
+  total = linkedSignal({
     source: this.qualitySignal,
     computation: () => this.qualitySignal() * this.price,
-    equal: (a: any, b: any) =>  a === b
-  }
-  )
-
-
+    equal: (a: any, b: any) => a === b,
+  });
 
   calculate() {
     this.qualitySignal.set(2);
   }
-
 }

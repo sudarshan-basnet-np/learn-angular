@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   // pure: false
 })
 export class CustomPipe implements PipeTransform {
-
   private DatePipe = new DatePipe('en-US');
 
   transform(value: any, ...args: any[]): any {
@@ -16,8 +15,6 @@ export class CustomPipe implements PipeTransform {
     // return value ?  '+977' + value  : value;
     // }
 
-
     return this.DatePipe.transform(value, 'MM/YYYY');
   }
-
 }

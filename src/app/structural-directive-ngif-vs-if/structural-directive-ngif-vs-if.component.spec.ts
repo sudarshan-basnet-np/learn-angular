@@ -8,9 +8,8 @@ describe('StructuralDirectiveNgifVsIfComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StructuralDirectiveNgifVsIfComponent]
-    })
-    .compileComponents();
+      imports: [StructuralDirectiveNgifVsIfComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(StructuralDirectiveNgifVsIfComponent);
     component = fixture.componentInstance;

@@ -6,36 +6,24 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-structural-directive-ngif-vs-if',
   imports: [CommonModule, FormsModule],
   templateUrl: './structural-directive-ngif-vs-if.component.html',
-  styleUrl: './structural-directive-ngif-vs-if.component.scss'
+  styleUrl: './structural-directive-ngif-vs-if.component.scss',
 })
 export class StructuralDirectiveNgifVsIfComponent {
-
-
-  isChecked : boolean = false;
+  isChecked: boolean = false;
   isInputBox: boolean = true;
-  
-  input1: string = "";
-  input2: string = "";
 
+  input1: string = '';
+  input2: string = '';
 
+  onClick() {
+    this.isChecked = !this.isChecked;
+  }
 
-   onClick() {
-
-        this.isChecked = !this.isChecked;
-
-   }
-
-   
-   showField() {
-
+  showField() {
     this.isInputBox = true;
+  }
 
-   }
-
-   hideField() {
+  hideField() {
     this.isInputBox = false;
-
-   }
-  
-
+  }
 }

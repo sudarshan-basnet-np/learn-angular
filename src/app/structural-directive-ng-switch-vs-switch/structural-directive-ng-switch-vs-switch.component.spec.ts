@@ -8,11 +8,12 @@ describe('StructuralDirectiveNgSwitchVsSwitchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StructuralDirectiveNgSwitchVsSwitchComponent]
-    })
-    .compileComponents();
+      imports: [StructuralDirectiveNgSwitchVsSwitchComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(StructuralDirectiveNgSwitchVsSwitchComponent);
+    fixture = TestBed.createComponent(
+      StructuralDirectiveNgSwitchVsSwitchComponent
+    );
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

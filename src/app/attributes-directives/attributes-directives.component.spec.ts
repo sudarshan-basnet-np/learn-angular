@@ -8,9 +8,8 @@ describe('AttributesDirectivesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AttributesDirectivesComponent]
-    })
-    .compileComponents();
+      imports: [AttributesDirectivesComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AttributesDirectivesComponent);
     component = fixture.componentInstance;

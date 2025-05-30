@@ -1,42 +1,56 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './reactive-forms.component.html',
-  styleUrl: './reactive-forms.component.scss'
+  styleUrl: './reactive-forms.component.scss',
 })
 export class ReactiveFormsComponent {
-
   reactiveForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.reactiveForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.maxLength(15)]],
-      lastname: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern(/^[a-zA-Z]+$/)]],
+      lastname: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(15),
+          Validators.pattern(/^[a-zA-Z]+$/),
+        ],
+      ],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       isChecked: [false, [Validators.requiredTrue]],
-      
+
       address: this.fb.group({
         city: ['', [Validators.required]],
         street: ['', [Validators.required]],
-        pincode: ['', [Validators.required]]
+        pincode: ['', [Validators.required]],
       }),
 
-      skills: this.fb.array([])
+      skills: this.fb.array([]),
     });
   }
 
   get skills(): FormArray {
-    return this.reactiveForm.get("skills") as FormArray;
+    return this.reactiveForm.get('skills') as FormArray;
   }
 
   newSkill(): FormGroup {
     return this.fb.group({
-      skill: ['', [Validators.required]] // Fixed typo: was 'sill' now 'skill'
+      skill: ['', [Validators.required]], // Fixed typo: was 'sill' now 'skill'
     });
   }
 
@@ -59,7 +73,7 @@ export class ReactiveFormsComponent {
 
   // Helper method to mark all fields as touched for validation display
   private markFormGroupTouched(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(key => {
+    Object.keys(formGroup.controls).forEach((key) => {
       const control = formGroup.get(key);
       control?.markAsTouched();
 
@@ -71,19 +85,19 @@ export class ReactiveFormsComponent {
 
   setValue() {
     this.reactiveForm.setValue({
-      firstname: "ram",
-      lastname: "basnet",
-      email: "ram@yopmail.com",
-      password: "test@123",
+      firstname: 'ram',
+      lastname: 'basnet',
+      email: 'ram@yopmail.com',
+      password: 'test@123',
       isChecked: true,
-      
+
       address: {
         city: 'ktm',
         street: 'Har har mahadev',
-        pincode: '1234'
+        pincode: '1234',
       },
-      
-      skills: [] // Include skills array for setValue
+
+      skills: [], // Include skills array for setValue
     });
   }
 
@@ -93,11 +107,11 @@ export class ReactiveFormsComponent {
 
   patchValue() {
     this.reactiveForm.patchValue({
-      firstname: "ram",
-      lastname: "basnet",
+      firstname: 'ram',
+      lastname: 'basnet',
       address: {
-        city: 'ktm'
-      }
+        city: 'ktm',
+      },
     });
   }
 }

@@ -10,68 +10,63 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
+  //default routes
 
-    //default routes
+  // {
+  //     path:'',
+  //     component: UserComponent
+  // },
 
-    // {
-    //     path:'',
-    //     component: UserComponent
-    // },
+  {
+    path: '',
+    redirectTo: 'user',
+    pathMatch: 'full',
+  },
 
-    {
-        path: '', 
-        redirectTo: 'user',
-        pathMatch: 'full'
+  //noraml route
+  {
+    path: 'user',
+    component: UserComponent,
+  },
 
-    },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+  },
 
-    //noraml route
-    {
-        path:  'user',
-        component: UserComponent
-    },
+  {
+    path: 'data-binding',
+    component: AppDataBindingComponent,
+  },
 
-    {
-        path: 'profile',
-        component: ProfileComponent
-    },
+  {
+    path: 'structural-directive',
+    component: StructuralDirectiveNgSwitchVsSwitchComponent,
+  },
 
-    {
-        path: 'data-binding',
-        component: AppDataBindingComponent
-    },
+  {
+    path: 'attribute-directive',
+    component: AttributesDirectivesComponent,
+  },
 
-    {
-        path: 'structural-directive',
-        component: StructuralDirectiveNgSwitchVsSwitchComponent
-    },
+  {
+    path: 'built-in-pipes',
+    component: BuiltInPipesComponent,
+  },
 
-    {
-        path: 'attribute-directive',
-        component: AttributesDirectivesComponent
-    }, 
+  {
+    path: 'tdf',
+    component: TemplateDrivenFormComponent,
+  },
 
-    {
-        path: 'built-in-pipes',
-        component: BuiltInPipesComponent
+  {
+    path: 'recative-forms',
+    component: ReactiveFormsComponent,
+  },
 
-    },
-
-    {
-        path: 'tdf',
-        component: TemplateDrivenFormComponent
-    },
-    
-    {
-        path: 'recative-forms',
-        component: ReactiveFormsComponent
-    },
-
-
-    //wild card routes
-    {
-
-        path: '**',
-        component: PageNotFoundComponent
-    }
+  //wild card routes
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+  },
 ];

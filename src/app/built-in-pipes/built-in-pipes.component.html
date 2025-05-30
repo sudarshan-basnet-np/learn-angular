@@ -1,73 +1,83 @@
-<div  class="m-3">
+<div class="m-3">
+  <h3 class="text-primary m-3">String type pipes</h3>
 
-    <h3 class="text-primary m-3">String type pipes </h3>
- 
-    <ol>
-    <h4> <li>UpperCase Pipe:  {{angularPipes  | uppercase}}  </li></h4>
-    <h4><li> LowerCase Pipe:  {{angularPipes  | lowercase}} </li></h4>
-    <h4> <li> TitleCase Pipe:  {{angularPipes  | titlecase}}  </li></h4>
-    <h4> <li> Slice Pipe (4:8) : {{angularPipes | slice : 4:8}}  </li>   </h4>
-    <h4>Slice Pipe (4:8) : {{angularPipes | slice : 4:8}}</h4>
-    <h4>Slice Pipe (4) : {{angularPipes | slice : 4}}</h4>
-    <h4>Slice Pipe (0:1) : {{angularPipes | slice : 0:1}}</h4>
-    <h4>Slice Pipe (2:-10) : {{angularPipes | slice : 4:-10}}</h4>
-    <h4>Slice Pipe (-10) : {{angularPipes | slice : -10}}</h4>
-    <h4>Slice Pipe (1: 3) : {{ [1, 2, 3, 4, 5, 6, ] | slice : 1:3 }}</h4>
+  <ol>
+    <h4>
+      <li>UpperCase Pipe: {{ angularPipes | uppercase }}</li>
+    </h4>
+    <h4>
+      <li>LowerCase Pipe: {{ angularPipes | lowercase }}</li>
+    </h4>
+    <h4>
+      <li>TitleCase Pipe: {{ angularPipes | titlecase }}</li>
+    </h4>
+    <h4>
+      <li>Slice Pipe (4:8) : {{ angularPipes | slice: 4 : 8 }}</li>
+    </h4>
+    <h4>Slice Pipe (4:8) : {{ angularPipes | slice: 4 : 8 }}</h4>
+    <h4>Slice Pipe (4) : {{ angularPipes | slice: 4 }}</h4>
+    <h4>Slice Pipe (0:1) : {{ angularPipes | slice: 0 : 1 }}</h4>
+    <h4>Slice Pipe (2:-10) : {{ angularPipes | slice: 4 : -10 }}</h4>
+    <h4>Slice Pipe (-10) : {{ angularPipes | slice: -10 }}</h4>
+    <h4>Slice Pipe (1: 3) : {{ [1, 2, 3, 4, 5, 6] | slice: 1 : 3 }}</h4>
 
-    <h4> <li> Json Pipe : {{personData | json}}  </li> </h4>
-    <pre> JsonPiep : {{personData | json}}</pre>
+    <h4>
+      <li>Json Pipe : {{ personData | json }}</li>
+    </h4>
+    <pre> JsonPiep : {{ personData | json }}</pre>
 
+    <h3 class="text-primary m-3">Number date pipes</h3>
 
-    <h3 class="text-primary m-3"> Number date pipes</h3>
+    <h4>
+      <li>DatePipe : {{ currrentDate | date }}</li>
+    </h4>
+    <h4>DatePipe : {{ currrentDate | date | uppercase }}</h4>
 
-    <h4><li>DatePipe : {{currrentDate | date}}</li></h4>
-    <h4>DatePipe : {{currrentDate | date | uppercase}}</h4>
+    <h4>Short : {{ currrentDate | date: 'short' }}</h4>
+    <h4>Short Date: {{ currrentDate | date: 'shortDate' }}</h4>
+    <h4>Short Time : {{ currrentDate | date: 'shortTime' }}</h4>
+    <h4>Medium : {{ currrentDate | date: 'medium' }}</h4>
+    <h4>Medium Date: {{ currrentDate | date: 'mediumDate' }}</h4>
+    <h4>Medium Time: {{ currrentDate | date: 'mediumTime' }}</h4>
 
-    <h4>Short : {{currrentDate | date: 'short'}} </h4>
-    <h4>Short Date: {{currrentDate | date: 'shortDate'}} </h4>
-    <h4>Short Time : {{currrentDate | date: 'shortTime'}} </h4>
-    <h4>Medium : {{currrentDate | date: 'medium'}} </h4>
-    <h4>Medium Date: {{currrentDate | date: 'mediumDate'}} </h4>
-    <h4>Medium Time: {{currrentDate | date: 'mediumTime'}} </h4>
+    <h4>
+      <li>Decimal Pipe : {{ 3.1223435454664 | number: '1.3' }}</li>
+    </h4>
+    <h4>Decimal Pipe : {{ 3.1223435454664 | number: '0.3' }}</h4>
+    <h4>Decimal Pipe : {{ 3.1223435454664 | number: '1.5' }}</h4>
 
-
-
-    <h4> <li> Decimal Pipe :  {{3.1223435454664 |  number : '1.3'}} </li></h4>
-    <h4>  Decimal Pipe :  {{3.1223435454664 |  number : '0.3'}} </h4>
-    <h4>  Decimal Pipe :  {{3.1223435454664 |  number : '1.5'}} </h4>
-
-
-
-    <h4> <li> Percentage Pipe  : {{0.25 | percent}}</li></h4>
-    <h4> <li> Currency Pipe : {{ 123.20 | currency}}</li></h4>
-    <h4> Currency Pipe : {{ 123.20 | currency: 'INR'}} </h4>
-    <h4> Currency Pipe : {{ 123.20 | currency: 'EUR'}}</h4>
+    <h4>
+      <li>Percentage Pipe : {{ 0.25 | percent }}</li>
+    </h4>
+    <h4>
+      <li>Currency Pipe : {{ 123.2 | currency }}</li>
+    </h4>
+    <h4>Currency Pipe : {{ 123.2 | currency: 'INR' }}</h4>
+    <h4>Currency Pipe : {{ 123.2 | currency: 'EUR' }}</h4>
 
     <h3 class="text-primary m-3">Async Pipe</h3>
-    <h4><li> Async Pipe 
+    <h4>
+      <li>
+        Async Pipe
         <ul>
-            @for(item of items | async; track item) {
-                <li>
-                {{item}}
+          @for (item of items | async; track item) {
+            <li>
+              {{ item }}
             </li>
-            }
-            
+          }
         </ul>
+      </li>
+    </h4>
+  </ol>
 
-    </li></h4>
+  <h6>Mobile Number : {{ mobileNumber | custom }}</h6>
+  <h6>Cusotmize Date : {{ currrentDate | custom }}</h6>
 
+  <h6>Pure pipe : Square of 5 = {{ 5 | pure }}</h6>
 
-   </ol>
-
-
-     <h6> Mobile Number :  {{mobileNumber | custom}}</h6>
-     <h6> Cusotmize Date : {{currrentDate | custom}}</h6>
-
-     <h6> Pure pipe : Square of  5 = {{5 | pure}}</h6>
-
-     <h6> Impure Pipes -> changes every time page is reload on it.  {{currrentDate | impure }}</h6>
-    
-
-
+  <h6>
+    Impure Pipes -> changes every time page is reload on it.
+    {{ currrentDate | impure }}
+  </h6>
 </div>
-    <h4>DatePipe : {{currrentDate | date | uppercase}}</h4>
+<h4>DatePipe : {{ currrentDate | date | uppercase }}</h4>

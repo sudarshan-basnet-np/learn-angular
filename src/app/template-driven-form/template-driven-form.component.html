@@ -1,8 +1,6 @@
 <div class="container">
-
-
-<form #userForm = "ngForm"  (ngSubmit)="onSubmit(userForm)" novalidate>
-<!-- 
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
+    <!-- 
     <pre>   Value : {{userForm.value | json}}</pre>
 
     <pre>   Invalid : {{userForm.invalid | json}}</pre>
@@ -10,94 +8,118 @@
     <pre>   UnTouched : {{userForm.untouched | json}}</pre>
     <pre>   submitted : {{userForm.submitted | json}}</pre> -->
 
-        <!-- <pre>   Valid : {{userForm.valid | json}}</pre> -->
+    <!-- <pre>   Valid : {{userForm.valid | json}}</pre> -->
 
-    
-
- <h2 class="text-center m-2 "> User Information</h2>
- 
-
-  <div class="form-group m-2">
-    <label for="FirstName"> FirstName </label>
-    <input type="text" class="form-control"  placeholder="Enter FirstName"  #fname="ngModel" name="firstName"
-     minlength="5" maxlength="10"
-     [(ngModel)]="userObject.firstName" required>
-
-     @if (fname?.dirty || fname?.touched) {
-     @if (fname?.errors?.['required']) {
-      <small class="text-danger">
-        FirstName is required
-      </small>
-     }
-
-     @if(fname?.errors?.['minlength']) {
-      <small class="text-danger">Min lenght is required</small>
-     }
-
-     }
-
-
-  </div>
+    <h2 class="text-center m-2">User Information</h2>
 
     <div class="form-group m-2">
-    <label for="LastName"> LastName </label>
-    <input type="text" class="form-control"  placeholder="Enter LastName" name="lastName"
-    minlength="5" maxlength="15" pattern="[a-zA-Z]+$" #lName="ngModel"
-    [(ngModel)]="userObject.lastName" required>
+      <label for="FirstName"> FirstName </label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter FirstName"
+        #fname="ngModel"
+        name="firstName"
+        minlength="5"
+        maxlength="10"
+        [(ngModel)]="userObject.firstName"
+        required
+      />
 
-    @if(lName?.dirty || lName?.touched){
-      @if(lName?.errors?.['minlength']) {
+      @if (fname?.dirty || fname?.touched) {
+        @if (fname?.errors?.['required']) {
+          <small class="text-danger"> FirstName is required </small>
+        }
 
-        <small class="text-danger">Minimum length is 5</small>
+        @if (fname?.errors?.['minlength']) {
+          <small class="text-danger">Min lenght is required</small>
+        }
       }
+    </div>
 
-      @if (lName?.errors?.['maxlength']) {
-        <small class="text-danger"> Maxminum lenght is 15</small>
+    <div class="form-group m-2">
+      <label for="LastName"> LastName </label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter LastName"
+        name="lastName"
+        minlength="5"
+        maxlength="15"
+        pattern="[a-zA-Z]+$"
+        #lName="ngModel"
+        [(ngModel)]="userObject.lastName"
+        required
+      />
+
+      @if (lName?.dirty || lName?.touched) {
+        @if (lName?.errors?.['minlength']) {
+          <small class="text-danger">Minimum length is 5</small>
+        }
+
+        @if (lName?.errors?.['maxlength']) {
+          <small class="text-danger"> Maxminum lenght is 15</small>
+        }
       }
+    </div>
 
-    }
+    <div class="form-group m-2">
+      <label for="Email"> Email </label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Enter Email"
+        #email="ngModel"
+        name="email"
+        email
+        [(ngModel)]="userObject.email"
+        required
+      />
 
-  </div>
-
-
-  <div class="form-group m-2">
-    <label for="Email"> Email </label>
-    <input type="email" class="form-control"  placeholder="Enter Email"  #email="ngModel" name="email" email
-    [(ngModel)]="userObject.email" required>
-
-    @if(email?.dirty || email?.touched){
-
-      @if(email?.errors?.['email']) {
-
-        <small class="text-danger"> Validate email pattern </small>
+      @if (email?.dirty || email?.touched) {
+        @if (email?.errors?.['email']) {
+          <small class="text-danger"> Validate email pattern </small>
+        }
       }
+    </div>
 
-
-    }
-
-  </div>
-  
- 
-  <div class="form-group m-2">
-    <label for="password">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-    name="pass" [(ngModel)]="userObject.pass" required>
-  </div>
+    <div class="form-group m-2">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        name="pass"
+        [(ngModel)]="userObject.pass"
+        required
+      />
+    </div>
 
     <div class="form-check m-2">
-    <label>Check me out</label>
-    <input type="checkbox" class="form-check-input" name="isCheck" [(ngModel)]="userObject.isCheck" required>
-  </div>
+      <label>Check me out</label>
+      <input
+        type="checkbox"
+        class="form-check-input"
+        name="isCheck"
+        [(ngModel)]="userObject.isCheck"
+        required
+      />
+    </div>
 
-  <button class="btn btn-success m-2" [disabled]="!userForm.valid">Submit</button>
+    <button class="btn btn-success m-2" [disabled]="!userForm.valid">
+      Submit
+    </button>
     <!-- <button class="btn btn-success m-2" [disabled]="userForm.invalid">Submit</button> -->
-  
-  
 
-  <button class="btn btn-warning m-2" (click)="setValue(userForm)"> Set Value  </button>
-  <button class="btn btn-primary m-2" (click)="patchValue(userForm)"> Set Patch Value  </button>
-    <button class="btn btn-secondary m-2" (click)="resetValues(userForm)"> Reset Value  </button>
-
-</form>
-
+    <button class="btn btn-warning m-2" (click)="setValue(userForm)">
+      Set Value
+    </button>
+    <button class="btn btn-primary m-2" (click)="patchValue(userForm)">
+      Set Patch Value
+    </button>
+    <button class="btn btn-secondary m-2" (click)="resetValues(userForm)">
+      Reset Value
+    </button>
+  </form>
 </div>

@@ -6,46 +6,35 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-attributes-directives',
   imports: [CommonModule, FormsModule],
   templateUrl: './attributes-directives.component.html',
-  styleUrl: './attributes-directives.component.scss'
+  styleUrl: './attributes-directives.component.scss',
 })
 export class AttributesDirectivesComponent {
-
   //@case 1
   textColor: string = 'text-success'; //green color
 
-
-
-
-  changeColor(color : string){
+  changeColor(color: string) {
     this.textColor = color;
-
   }
-
 
   //@Case 2
 
   isTextGreen: boolean = false;
 
-
   //@Case 3
 
   userClass: string = '';
 
-
-  styleColor : string = "orange"
+  styleColor: string = 'orange';
   updateColor(ngStyleColor: string) {
     this.styleColor = ngStyleColor;
   }
 
   istextOrange: boolean = false;
 
-
-  customClass : any = {
-
-    'color' : 'orange',
-    'height' : '150px',
-    'width': '400px',
-    'border': '1px solid black'
-  }
-
+  customClass: any = {
+    color: 'orange',
+    height: '150px',
+    width: '400px',
+    border: '1px solid black',
+  };
 }

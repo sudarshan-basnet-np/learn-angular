@@ -5,21 +5,18 @@ import { SharingDataService } from '../sharing-data.service';
   selector: 'app-profile',
   imports: [],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+  styleUrl: './profile.component.scss',
 })
 export class ProfileComponent {
+  dummyData: any;
 
+  isEligiableForSubscription: Boolean;
 
-  dummyData : any;
+  constructor(private _sharedData: SharingDataService) {
+    this.dummyData = this._sharedData.userObect;
 
-  isEligiableForSubscription : Boolean;
-
-  constructor(private _sharedData : SharingDataService ) {
-
-    this.dummyData =  this._sharedData.userObect;
-
-    this.isEligiableForSubscription = this._sharedData.isEligiableForSubscription();
-
+    this.isEligiableForSubscription =
+      this._sharedData.isEligiableForSubscription();
   }
 
   //   userObect = {
@@ -28,6 +25,4 @@ export class ProfileComponent {
   //   userName: 'ramm',
   //   email: 'ram@yopmail.com'
   // }
-
-
 }

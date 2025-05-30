@@ -8,9 +8,8 @@ describe('AppDataBindingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppDataBindingComponent]
-    })
-    .compileComponents();
+      imports: [AppDataBindingComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppDataBindingComponent);
     component = fixture.componentInstance;

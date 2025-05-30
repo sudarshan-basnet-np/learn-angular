@@ -1,71 +1,59 @@
-
-
 <div align="center">
+  <div>
+    <h1>
+      <b> UserName: {{ dummyData.name }}</b>
+    </h1>
+  </div>
 
+  <div class="m-2">
+    <p>Interpolation</p>
+    <p>
+      <b>{{ topic }} </b> with {{ type1 }}
+    </p>
 
-    <div >
+    <h1 style="color: red">Notes {{ topicdefination }}</h1>
+  </div>
 
-        <h1><b> UserName: {{dummyData.name}}</b> </h1>
+  <div>
+    <p>Property Binding</p>
+    <p>
+      <b> {{ topic }}</b> with {{ type2 }}
+    </p>
 
+    <!-- Property Binding -->
+
+    <input id="" name="" [value]="propertyDefination" />
+
+    <div style="height: 160px; width: 160px">
+      <img [src]="image" alt="Image of deadpool" />
     </div>
-    
-    <div class="m-2">
-    <p> Interpolation  </p>
-    <p>    <b>{{topic}} </b>  with  {{type1}} </p>
-    
-    <h1 style="color: red;"> Notes {{topicdefination}} </h1>
-    </div>
+  </div>
 
-    <div>
-        <p> Property Binding </p>
-        <p> <b> {{topic}}</b>   with {{type2}}</p>
+  <div>
+    <p>Event Binding</p>
 
-        <!-- Property Binding -->
+    <button (click)="onClick()">Save</button>
+    <br />
+    <br />
+    <select (change)="onChange()">
+      <option value="Country">Country</option>
+      <option value="Nepal">Nepal</option>
+      <option value="India">India</option>
+      <option value="Korea">Korea</option>
+      <option value="Butan">Butan</option>
+    </select>
 
-        <input id="" name="" [value]="propertyDefination">
+    <p style="font-size: 25px; color: red">Notes {{ eventDefination }}</p>
+  </div>
 
-    
-        <div style="height: 160px; width: 160px;">
-            <img [src]="image" alt="Image of deadpool"/>
-        
-        </div>
-    </div>
+  <div>
+    <p>Two Way Data Binding</p>
 
+    <input type="text" [(ngModel)]="random" />
 
-    <div>
-        <p> Event Binding</p>
+    {{ random }}
 
-        <button (click)="onClick()"> Save </button>
-        <br>
-        <br>
-        <select (change)="onChange()">
-            <option value="Country">Country</option>
-            <option value="Nepal"> Nepal</option>
-            <option value="India"> India</option>
-            <option value="Korea"> Korea</option>
-            <option value="Butan"> Butan</option>
-        
-        </select>
-
-
-        <p style="font-size: 25px; color: red;"> Notes {{eventDefination}} </p>
-
-    </div>
-
-
-    <div>
-        <p> Two Way Data Binding</p>
-
-    
-        <input  type="text"  [(ngModel)] = "random" /> 
-
-        {{random}}
-
-
-        <input type="text" [(ngModel)]  = "topic" />
-        {{topic}}
-
-
-    </div>
-
+    <input type="text" [(ngModel)]="topic" />
+    {{ topic }}
+  </div>
 </div>

@@ -8,9 +8,8 @@ describe('BuiltInPipesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BuiltInPipesComponent]
-    })
-    .compileComponents();
+      imports: [BuiltInPipesComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BuiltInPipesComponent);
     component = fixture.componentInstance;
