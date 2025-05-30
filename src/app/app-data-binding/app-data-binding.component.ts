@@ -6,45 +6,38 @@ import { SharingDataService } from '../sharing-data.service';
   selector: 'app-app-data-binding',
   imports: [FormsModule],
   templateUrl: './app-data-binding.component.html',
-  styleUrl: './app-data-binding.component.scss'
+  styleUrl: './app-data-binding.component.scss',
 })
 export class AppDataBindingComponent {
+  topic: string = ' Data Binding';
 
-  topic: string = " Data Binding";
+  type1: string = 'Interpolation';
 
-  type1: string = "Interpolation";
+  topicdefination: string = 'Data flows from .ts file to html ';
 
-  topicdefination: string = "Data flows from .ts file to html ";
+  type2: string = 'Property Binding';
 
-  type2: string = "Property Binding";
+  propertyDefination: string =
+    'data is binid on html file with [] on values side';
 
-  propertyDefination: string = "data is binid on html file with [] on values side";
+  image: string =
+    'https://yt3.googleusercontent.com/vDRk9yJj6aeYBq_1fa66x-QayYqsW3XS6xG-yFVODBQyEFVY5YigauGG8ibCgALGoYvdvWek7hk=s160-c-k-c0x00ffffff-no-rj';
 
-  image: string = "https://yt3.googleusercontent.com/vDRk9yJj6aeYBq_1fa66x-QayYqsW3XS6xG-yFVODBQyEFVY5YigauGG8ibCgALGoYvdvWek7hk=s160-c-k-c0x00ffffff-no-rj";
+  eventDefination: string = 'In Event Binding Data flows from html to ts';
 
-  eventDefination: string = "In Event Binding Data flows from html to ts"
-
-  random: string= "";
+  random: string = '';
 
   onClick() {
-
-     alert("Successfully Implemented Event Binding");
-
+    alert('Successfully Implemented Event Binding');
   }
 
   onChange() {
-    alert("Country has changes successfully")
+    alert('Country has changes successfully');
   }
 
-  
   dummyData: any;
 
-  constructor(private _sharedData : SharingDataService) {
+  constructor(private _sharedData: SharingDataService) {
     this.dummyData = this._sharedData.userObect;
-
   }
-
-
-
-
 }

@@ -7,21 +7,16 @@ import { JsonPipe } from '@angular/common';
   selector: 'app-template-driven-form',
   imports: [FormsModule, JsonPipe],
   templateUrl: './template-driven-form.component.html',
-  styleUrl: './template-driven-form.component.scss'
+  styleUrl: './template-driven-form.component.scss',
 })
-export class TemplateDrivenFormComponent implements OnInit{
+export class TemplateDrivenFormComponent implements OnInit {
+  userObject: User = {};
 
-
-  userObject: User = {}
-
-   onSubmit(userForm:NgForm){
-
+  onSubmit(userForm: NgForm) {
     console.log(userForm.value);
+  }
 
-   }
-
-
-   ngOnInit(): void {
+  ngOnInit(): void {
     //  this.userObject = {
     //   firstName: 'Ram',
     //   lastName: 'Basnet',
@@ -29,36 +24,30 @@ export class TemplateDrivenFormComponent implements OnInit{
     //   pass: 'pass',
     //   isCheck: true
     //  }
-   }
+  }
 
-
-   setValue(userForm:NgForm){
-
+  setValue(userForm: NgForm) {
     let obje = {
       firstName: 'Ram',
       lastName: 'Basnet',
       email: 'ram@yomail.com',
       pass: 'pass',
-      isCheck: true
+      isCheck: true,
+    };
+    userForm.setValue(obje);
+  }
 
-    }
-    userForm.setValue(obje)
-   }
-
-  patchValue(userForm:NgForm){
-  let obje = {
-         firstName: 'Ram',
+  patchValue(userForm: NgForm) {
+    let obje = {
+      firstName: 'Ram',
       lastName: 'Basnet',
       email: 'ram@yomail.com',
+    };
+    userForm.control.patchValue(obje);
   }
-  userForm.control.patchValue(obje)
-   }
 
-
-
-   resetValues(userForm:NgForm){
+  resetValues(userForm: NgForm) {
     userForm.reset();
     // userForm.resetForm();
-
-   }
+  }
 }

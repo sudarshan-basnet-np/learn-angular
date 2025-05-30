@@ -1,31 +1,27 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SharingDataService {
-
-  constructor() { }
-
-
+  constructor() {}
 
   userObect = {
     id: 1,
     name: 'ram',
     userName: 'ramm',
     email: 'ram@yopmail.com',
-    subscription: 'basic'
-  }
+    subscription: 'basic',
+  };
 
-
-  isEligiableForSubscription(): Boolean{
-
-    if(this.userObect.subscription === 'basic' && this.userObect.email.endsWith('@gmail.com')) {
+  isEligiableForSubscription(): Boolean {
+    if (
+      this.userObect.subscription === 'basic' &&
+      this.userObect.email.endsWith('@gmail.com')
+    ) {
       return true;
-    } else{
+    } else {
       return false;
     }
   }
-
-
 }

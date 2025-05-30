@@ -8,9 +8,8 @@ describe('StructuralDirectiveNgforVsForComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StructuralDirectiveNgforVsForComponent]
-    })
-    .compileComponents();
+      imports: [StructuralDirectiveNgforVsForComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(StructuralDirectiveNgforVsForComponent);
     component = fixture.componentInstance;

@@ -8,9 +8,8 @@ describe('TemplateDrivenFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TemplateDrivenFormComponent]
-    })
-    .compileComponents();
+      imports: [TemplateDrivenFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TemplateDrivenFormComponent);
     component = fixture.componentInstance;

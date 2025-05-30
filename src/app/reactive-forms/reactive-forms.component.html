@@ -1,19 +1,29 @@
 <div class="container">
-  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()"> 
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
     <h2 class="text-center m-2">Reactive Form</h2>
 
     <!-- FirstName Field -->
     <div class="form-group m-2">
       <label for="FirstName">FirstName</label>
-      <input type="text" class="form-control" placeholder="Enter FirstName" required formControlName="firstname">
-      
-  
-        @if (reactiveForm.controls['firstname'].dirty || reactiveForm.controls['firstname'].touched) {
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter FirstName"
+        required
+        formControlName="firstname"
+      />
+
+      @if (
+        reactiveForm.controls['firstname'].dirty ||
+        reactiveForm.controls['firstname'].touched
+      ) {
         @if (reactiveForm.controls['firstname'].errors?.['required']) {
           <small class="text-danger">FirstName is required</small>
         }
         @if (reactiveForm.controls['firstname'].errors?.['maxlength']) {
-          <small class="text-danger">FirstName cannot exceed 15 characters</small>
+          <small class="text-danger"
+            >FirstName cannot exceed 15 characters</small
+          >
         }
       }
     </div>
@@ -21,17 +31,30 @@
     <!-- LastName Field -->
     <div class="form-group m-2">
       <label for="LastName">LastName</label>
-      <input type="text" class="form-control" placeholder="Enter LastName" formControlName="lastname" required>
-      
-      @if (reactiveForm.controls['lastname'].dirty || reactiveForm.controls['lastname'].touched) {
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter LastName"
+        formControlName="lastname"
+        required
+      />
+
+      @if (
+        reactiveForm.controls['lastname'].dirty ||
+        reactiveForm.controls['lastname'].touched
+      ) {
         @if (reactiveForm.controls['lastname'].errors?.['required']) {
           <small class="text-danger">LastName is required</small>
         }
         @if (reactiveForm.controls['lastname'].errors?.['minlength']) {
-          <small class="text-danger">LastName must be at least 5 characters</small>
+          <small class="text-danger"
+            >LastName must be at least 5 characters</small
+          >
         }
         @if (reactiveForm.controls['lastname'].errors?.['maxlength']) {
-          <small class="text-danger">LastName cannot exceed 15 characters</small>
+          <small class="text-danger"
+            >LastName cannot exceed 15 characters</small
+          >
         }
         @if (reactiveForm.controls['lastname'].errors?.['pattern']) {
           <small class="text-danger">LastName can only contain letters</small>
@@ -42,9 +65,18 @@
     <!-- Email Field -->
     <div class="form-group m-2">
       <label for="Email">Email</label>
-      <input type="email" class="form-control" placeholder="Enter Email" required formControlName="email">
-      
-      @if (reactiveForm.controls['email'].dirty || reactiveForm.controls['email'].touched) {
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Enter Email"
+        required
+        formControlName="email"
+      />
+
+      @if (
+        reactiveForm.controls['email'].dirty ||
+        reactiveForm.controls['email'].touched
+      ) {
         @if (reactiveForm.controls['email'].errors?.['required']) {
           <small class="text-danger">Email is required</small>
         }
@@ -57,9 +89,18 @@
     <!-- Password Field -->
     <div class="form-group m-2">
       <label for="password">Password</label>
-      <input type="password" class="form-control" placeholder="Password" required formControlName="password">
-      
-      @if (reactiveForm.controls['password'].dirty || reactiveForm.controls['password'].touched) {
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        required
+        formControlName="password"
+      />
+
+      @if (
+        reactiveForm.controls['password'].dirty ||
+        reactiveForm.controls['password'].touched
+      ) {
         @if (reactiveForm.controls['password'].errors?.['required']) {
           <small class="text-danger">Password is required</small>
         }
@@ -68,10 +109,18 @@
 
     <!-- Checkbox Field -->
     <div class="form-check m-2">
-      <input type="checkbox" class="form-check-input" formControlName="isChecked" required>
+      <input
+        type="checkbox"
+        class="form-check-input"
+        formControlName="isChecked"
+        required
+      />
       <label class="form-check-label">Check me out</label>
-      
-      @if (reactiveForm.controls['isChecked'].dirty || reactiveForm.controls['isChecked'].touched) {
+
+      @if (
+        reactiveForm.controls['isChecked'].dirty ||
+        reactiveForm.controls['isChecked'].touched
+      ) {
         @if (reactiveForm.controls['isChecked'].errors?.['required']) {
           <small class="text-danger">You must check this box</small>
         }
@@ -81,17 +130,33 @@
     <!-- Skills FormArray -->
     <div class="form-group m-2" formArrayName="skills">
       <h5>Skills</h5>
-      <button type="button" class="btn btn-primary mb-2" (click)="addSkill()">Add Skill</button>
+      <button type="button" class="btn btn-primary mb-2" (click)="addSkill()">
+        Add Skill
+      </button>
 
       @for (skill of skills.controls; track $index; let i = $index) {
         <div [formGroupName]="i" class="mb-2">
           <div class="input-group">
-            <span class="input-group-text">{{i + 1}}</span>
-            <input type="text" class="form-control" placeholder="Skill name" formControlName="skill">
-            <button type="button" class="btn btn-danger" (click)="deleteSkill(i)">Delete</button>
+            <span class="input-group-text">{{ i + 1 }}</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Skill name"
+              formControlName="skill"
+            />
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteSkill(i)"
+            >
+              Delete
+            </button>
           </div>
-          
-          @if (skills.at(i).get('skill')?.dirty || skills.at(i).get('skill')?.touched) {
+
+          @if (
+            skills.at(i).get('skill')?.dirty ||
+            skills.at(i).get('skill')?.touched
+          ) {
             @if (skills.at(i).get('skill')?.errors?.['required']) {
               <small class="text-danger">Skill name is required</small>
             }
@@ -103,12 +168,21 @@
     <!-- Address FormGroup -->
     <div class="form-group m-2" formGroupName="address">
       <h5>Address</h5>
-      
+
       <div class="form-group m-2">
         <label for="city">City</label>
-        <input type="text" class="form-control" placeholder="Enter city" required formControlName="city">
-        
-        @if (reactiveForm.get('address.city')?.dirty || reactiveForm.get('address.city')?.touched) {
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter city"
+          required
+          formControlName="city"
+        />
+
+        @if (
+          reactiveForm.get('address.city')?.dirty ||
+          reactiveForm.get('address.city')?.touched
+        ) {
           @if (reactiveForm.get('address.city')?.errors?.['required']) {
             <small class="text-danger">City is required</small>
           }
@@ -117,9 +191,18 @@
 
       <div class="form-group m-2">
         <label for="pincode">Pincode</label>
-        <input type="text" class="form-control" placeholder="Enter pincode" required formControlName="pincode">
-        
-        @if (reactiveForm.get('address.pincode')?.dirty || reactiveForm.get('address.pincode')?.touched) {
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter pincode"
+          required
+          formControlName="pincode"
+        />
+
+        @if (
+          reactiveForm.get('address.pincode')?.dirty ||
+          reactiveForm.get('address.pincode')?.touched
+        ) {
           @if (reactiveForm.get('address.pincode')?.errors?.['required']) {
             <small class="text-danger">Pincode is required</small>
           }
@@ -128,9 +211,18 @@
 
       <div class="form-group m-2">
         <label for="street">Street</label>
-        <input type="text" class="form-control" placeholder="Enter street" required formControlName="street">
-        
-        @if (reactiveForm.get('address.street')?.dirty || reactiveForm.get('address.street')?.touched) {
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter street"
+          required
+          formControlName="street"
+        />
+
+        @if (
+          reactiveForm.get('address.street')?.dirty ||
+          reactiveForm.get('address.street')?.touched
+        ) {
           @if (reactiveForm.get('address.street')?.errors?.['required']) {
             <small class="text-danger">Street is required</small>
           }
@@ -140,16 +232,32 @@
 
     <!-- Action Buttons -->
     <div class="m-2">
-      <button class="btn btn-success m-2" type="submit" [disabled]="reactiveForm.invalid">Submit</button>
-      <button type="button" class="btn btn-warning m-2" (click)="setValue()">Set Value</button>
-      <button type="button" class="btn btn-secondary m-2" (click)="resetValues()">Reset Value</button>
-      <button type="button" class="btn btn-primary m-2" (click)="patchValue()">Set Partial Value</button>
+      <button
+        class="btn btn-success m-2"
+        type="submit"
+        [disabled]="reactiveForm.invalid"
+      >
+        Submit
+      </button>
+      <button type="button" class="btn btn-warning m-2" (click)="setValue()">
+        Set Value
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary m-2"
+        (click)="resetValues()"
+      >
+        Reset Value
+      </button>
+      <button type="button" class="btn btn-primary m-2" (click)="patchValue()">
+        Set Partial Value
+      </button>
     </div>
 
     <!-- Form Debug Info (Remove in production) -->
     <div class="m-2">
-      <h6>Form Status: {{reactiveForm.status}}</h6>
-      <pre>{{reactiveForm.value | json}}</pre>
+      <h6>Form Status: {{ reactiveForm.status }}</h6>
+      <pre>{{ reactiveForm.value | json }}</pre>
     </div>
   </form>
 </div>
